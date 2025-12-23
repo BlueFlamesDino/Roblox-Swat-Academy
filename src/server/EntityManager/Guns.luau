@@ -6,6 +6,7 @@ function module.create()
 
 	self.Gun = {} --Table that'll hold gun information
 	self.Owner = nil --Player that has this gun
+	self.Tool = nil
 
 	return self
 end
