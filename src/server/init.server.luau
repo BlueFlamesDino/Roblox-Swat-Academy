@@ -5,8 +5,7 @@ What is this script?
 -This script holds the game's logic.
 ]]
 
-local Utility = require(ReplicatedStorage.RojoShared.Utility)
-
+local Utility = require(ReplicatedStorage.RojoShared.Utility) --General Utility functions, may be of use.
 -- Classes --
 local classCopCar = require(script.Vehicles.CopCar)
 local classClient = require(script.Client)
