@@ -12,7 +12,7 @@ function module.new()
 	vehicle.steerAngle = 30
 
 	vehicle._wheels = {}
-	vehicle._seats = {}
+	vehicle._seat = nil
 
 	function vehicle.acelerate(speed)
 		for identifier: string, object: Wheel in pairs(vehicle._wheels) do
@@ -33,7 +33,7 @@ function module.new()
 		vehicle._wheels[identifier] = wheel
 	end
 
-	function vehicle.setSeat(seatInstance: Seat | VehicleSeat, identifier: string) end
+	function vehicle.setDriveSeat(seatInstance: Seat | VehicleSeat) end
 
 	return vehicle
 end
