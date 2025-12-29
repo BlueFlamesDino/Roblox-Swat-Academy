@@ -10,15 +10,34 @@ function module.new()
 	local vehicle = {}
 
 	vehicle.steerAngle = 30
+	vehicle._velocity = 0
 
 	vehicle._constraints = {}
 	vehicle._seat = nil
 
 	--Makes all motor constraints gain AngularVelocity
-	function vehicle.acelerate(speed)
+	function vehicle.acelerate(speed: number)
+		vehicle._velocity += speed
 		for identifier: string, object: Constraint in pairs(vehicle._constraints) do
 			if not object.steers then
-				object.instance.AngularVelocity = speed
+				object.instance.AngularVelocity = vehicle._velocity
+			end
+		end
+	end
+	--Makes all motor constraints lose AngulerVelocity. Friction > 0 is more slowdown.
+	function vehicle.applyFriction(friction: number)
+		vehicle._velocity -= vehicle._velocity * friction
+		for identifier: string, object: Constraint in pairs(vehicle._constraints) do
+			if not object.steers then
+				object.instance.AngularVelocity = vehicle._velocity
+			end
+		end
+	end
+	function vehicle.setVelocity(newVelocity: number)
+		vehicle._velocity = newVelocity
+		for identifier: string, object: Constraint in pairs(vehicle._constraints) do
+			if not object.steers then
+				object.instance.AngularVelocity = vehicle._velocity
 			end
 		end
 	end

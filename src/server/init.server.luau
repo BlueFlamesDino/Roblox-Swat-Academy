@@ -1,5 +1,6 @@
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local RunService = game:GetService("RunService")
 --[[
 What is this script?
 -This script holds the game's logic.
@@ -25,7 +26,10 @@ for index, instance: Instance in ExampleCar:GetChildren() do
 	end
 end
 print(Car._constraints)
-Car.acelerate(20)
+Car.acelerate(5)
+RunService.Heartbeat:Connect(function(delta)
+	Car.applyFriction(0.5 * delta)
+end)
 --Player Handleling --
 Players.PlayerAdded:Connect(function(player)
 	Clients[player.UserId] = classClient.new(player)
