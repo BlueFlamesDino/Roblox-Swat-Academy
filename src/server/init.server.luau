@@ -12,15 +12,12 @@ local classClient = require(script.Client)
 -- Containers --
 local Clients = {}
 
-local testCar = classCopCar.new()
-testCar.drive()
-
 --Player Handleling --
 Players.PlayerAdded:Connect(function(player)
 	Clients[player.UserId] = classClient.new(player)
 	local client = Clients[player.UserId] --For eaiser syntax
 
-	--p
+	--temp
 end)
 Players.PlayerRemoving:Connect(function(player, reason)
 	local client = Clients[player.UserId] --For eaiser syntax
