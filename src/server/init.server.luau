@@ -1,21 +1,30 @@
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
--- Game code is put here
+--[[
+What is this script?
+-This script holds the game's logic.
+]]
+
 local Utility = require(ReplicatedStorage.RojoShared.Utility)
 
--- Classes
+-- Classes --
 local classCopCar = require(script.Vehicles.CopCar)
 local classClient = require(script.Client)
--- Containers
+-- Containers --
 local Clients = {}
 
-local car1 = classCopCar.new()
+local testCar = classCopCar.new()
+testCar.drive()
 
+--Player Handleling --
 Players.PlayerAdded:Connect(function(player)
 	Clients[player.UserId] = classClient.new(player)
+	local client = Clients[player.UserId] --For eaiser syntax
 
-	local client = Clients[player.UserId]
+	--p
 end)
 Players.PlayerRemoving:Connect(function(player, reason)
-	Clients[player.UserId] = nil
+	local client = Clients[player.UserId] --For eaiser syntax
+
+	Clients[player.UserId] = nil --Delete the client
 end)

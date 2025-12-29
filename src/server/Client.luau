@@ -1,6 +1,6 @@
 local module = {}
 
-export type client = {
+type client = {
 	player: Player,
 	inventory: {},
 	equipped: {},
