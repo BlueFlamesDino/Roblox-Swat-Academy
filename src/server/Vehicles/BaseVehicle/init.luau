@@ -18,6 +18,7 @@ function module.new()
 	function vehicle.acelerate(speed)
 		for identifier: string, object: Constraint in pairs(vehicle._constraints) do
 			if not object.steers then
+				object.instance.AngularVelocity = speed
 			end
 		end
 	end
