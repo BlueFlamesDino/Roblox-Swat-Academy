@@ -8,7 +8,9 @@ local RStorage = {
 	},
 }
 --Workspace instances
-local work = {}
+local work = {
+	["ExampleCar"] = game.Workspace:WaitForChild("ExampleCar"):WaitForChild("TestCar"),
+}
 
 local module = {
 	["RStorage"] = RStorage,

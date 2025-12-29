@@ -13,7 +13,19 @@ local classClient = require(script.Client)
 local Clients = {}
 
 local Car = classVehicle.new()
+local ExampleCar: Part = InstanceRefrence.Workspace.ExampleCar
 
+for index, instance: Instance in ExampleCar:GetChildren() do
+	if not instance:IsA("Part") then
+		continue
+	end
+	local constraint = instance:WaitForChild("WheelMotor", 1)
+	if constraint then
+		Car.setConstraint(constraint, false, instance.Name)
+	end
+end
+print(Car._constraints)
+Car.acelerate(20)
 --Player Handleling --
 Players.PlayerAdded:Connect(function(player)
 	Clients[player.UserId] = classClient.new(player)
