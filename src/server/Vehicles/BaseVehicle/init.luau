@@ -5,12 +5,12 @@ function module.new()
 	local vehicle = {}
 
 	function vehicle.drive()
-		print("I'm Driving Bro")
+		print("Driving")
 	end
 
-	function vehicle.setWheel(servoInstance: HingeConstraint, identifier: string) end
+	function vehicle.setWheel(motorInstance: HingeConstraint, identifier: string) end
 
-	function vehicle.setSeat(seatInstance: Seat, identifier: string) end
+	function vehicle.setSeat(seatInstance: Seat | VehicleSeat, identifier: string) end
 
 	return vehicle
 end
