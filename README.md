@@ -2,7 +2,7 @@
 This is a repository made to host and support scripts for a [Roblox experince](https://www.roblox.com/games/82367559992760/SWAT-Academy) utilizing [Rojo](https://rojo.space/). This is only setup for scripters as of now, but other roles in development team are welcome to test, make issues, and participate in discussions.
 # Development
 ### Heads up Developers!
-This is a public repository! Never put anything other than Luau code or meaningful comments, joke comments or of the sort I, BlueFlamesDino, is okay with.
+This is a public repository! Never put anything other than Luau code or meaningful comments. Joke comments or of the sort I, BlueFlamesDino, am okay with.
 ## For Collaborators
 - Install [Git](https://git-scm.com/).
 - Have an IDE, Visual Studio is suggested.
