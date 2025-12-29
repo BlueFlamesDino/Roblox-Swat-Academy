@@ -15,7 +15,9 @@ function module.new()
 	vehicle._seats = {}
 
 	function vehicle.acelerate(speed)
-		print("acelerating")
+		for identifier: string, object: Wheel in pairs(vehicle._wheels) do
+			object.instance.AngularVelocity = speed
+		end
 	end
 
 	function vehicle.steer(steer)
@@ -26,8 +28,8 @@ function module.new()
 		end
 	end
 
-	function vehicle.setWheel(motorInstance: HingeConstraint, steerable: boolean, identifier: string)
-		local wheel: Wheel = { ["steerable"] = steerable, ["instance"] = motorInstance }
+	function vehicle.setWheel(hingeInstance: HingeConstraint, steerable: boolean, identifier: string)
+		local wheel: Wheel = { ["steerable"] = steerable, ["instance"] = hingeInstance }
 		vehicle._wheels[identifier] = wheel
 	end
 
