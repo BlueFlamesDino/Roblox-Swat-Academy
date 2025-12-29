@@ -1,5 +1,5 @@
 # SWAT Academy
-This is a repository made to host and support scripts for a [Roblox experince](https://www.roblox.com/games/82367559992760/SWAT-Academy) utilizing [Rojo](https://rojo.space/). This is only setup for scripters as of now, but other roles in development team are welcome to test, make issues, and participate in discussions.
+This is a repository made to host and support scripts for a [Roblox experince](https://www.roblox.com/games/82367559992760/SWAT-Academy) utilizing [Rojo](https://rojo.space/). This is only setup for scripters as of now, but other roles in development team or anyone are welcome to test, make issues, and participate in discussions.
 # Development
 ### Heads up Developers!
 This is a public repository! Never put anything other than Luau code or meaningful comments. Joke comments or of the sort I, BlueFlamesDino, am okay with.
@@ -10,7 +10,7 @@ This is a public repository! Never put anything other than Luau code or meaningf
 - Setup sync between Rojo and Roblox Studio.
 - Open or create a Github branch to work on a feature.
 ## For Non-Collaborators
-It is recommended that you join [SWAT Academy](https://www.roblox.com/communities/14884048/Swat-Academy#!/about), our [Discord](), and apply to be a developer; But if that dosen't float your boat do the following.
+It is recommended that you join [SWAT Academy](https://www.roblox.com/communities/14884048/Swat-Academy#!/about), our [Discord](), and apply to be a developer.
 - Same as a Collaborator, except for the opening or creating branches step.
 - Instead fork this repo.
 ## Developer FAQ
