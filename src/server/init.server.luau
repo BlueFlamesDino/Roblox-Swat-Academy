@@ -7,10 +7,12 @@ What is this script?
 local InstanceRefrence = require(ReplicatedStorage.RojoShared.InstanceRefrences)
 local Utility = require(InstanceRefrence.RStorage.Modules.Utility) --General Utility functions, may be of use.
 -- Classes --
-local classCopCar = require(script.Vehicles.CopCar)
+local classVehicle = require(script.Vehicles.BaseVehicle)
 local classClient = require(script.Client)
 -- Containers --
 local Clients = {}
+
+local Car = classVehicle.new()
 
 --Player Handleling --
 Players.PlayerAdded:Connect(function(player)

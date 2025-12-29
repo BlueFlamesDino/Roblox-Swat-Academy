@@ -2,7 +2,7 @@
 local module = {}
 
 type Constrait = {
-	steerable: boolean,
+	steers: boolean,
 	instance: Instance,
 }
 
@@ -14,22 +14,25 @@ function module.new()
 	vehicle._constraits = {}
 	vehicle._seat = nil
 
+	--Makes all motor constraints gain AngularVelocity
 	function vehicle.acelerate(speed)
 		for identifier: string, object: Constrait in pairs(vehicle._constraits) do
-			object.instance.AngularVelocity = speed
+			if not object.steers then
+				object.instance.AngularVelocity = speed
+			end
 		end
 	end
-
+	--Makes all servo constraints steer to a TargetAngle
 	function vehicle.steer(steer)
 		for identifier: string, object: Constrait in pairs(vehicle._constraits) do
-			if object.steerable then
+			if object.steers then
 				object.instance.TargetAngle = vehicle.steerAngle * steer
 			end
 		end
 	end
-
-	function vehicle.setConstrait(hingeInstance: HingeConstraint, steerable: boolean, identifier: string)
-		local constrait: Constrait = { ["steerable"] = steerable, ["instance"] = hingeInstance }
+	--Will then recognize constraint provided. If it's a servo then steers should be true, motor false.
+	function vehicle.setConstrait(hingeInstance: HingeConstraint, steers: boolean, identifier: string)
+		local constrait: Constrait = { ["steers"] = steers, ["instance"] = hingeInstance }
 		vehicle._constraits[identifier] = constrait
 	end
 
