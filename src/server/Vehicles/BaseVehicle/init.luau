@@ -5,17 +5,18 @@ function module.new()
 	local vehicle = {}
 
 	vehicle._wheels = {}
+	vehicle._seats = {}
 
 	function vehicle.acelerate(speed)
 		print("acelerating")
 	end
 
-	function vehicle.steer(steer)
+	function vehicle.steer(steer: number)
 		print("steering")
 	end
 
 	function vehicle.setWheel(motorInstance: HingeConstraint, steerable: boolean, identifier: string)
-		vehicle._wheels[identifier] = { ["steerable"] = steerable }
+		vehicle._wheels[identifier] = { ["steerable"] = steerable, ["instance"] = motorInstance }
 	end
 
 	function vehicle.setSeat(seatInstance: Seat | VehicleSeat, identifier: string) end

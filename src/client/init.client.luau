@@ -5,7 +5,8 @@ What is this script?
 it can be done on the server, then do it on the server.
 ]]
 
-local Utility = require(ReplicatedStorage.RojoShared.Utility)
+local InstanceRefrence = require(ReplicatedStorage.RojoShared.InstanceRefrences)
+local Utility = require(InstanceRefrence.RStorage.Modules.Utility)
 
 local function test()
 	print("is studio")
