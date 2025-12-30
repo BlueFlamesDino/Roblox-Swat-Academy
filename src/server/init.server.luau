@@ -7,6 +7,7 @@ What is this script?
 ]]
 local InstanceRefrence = require(ReplicatedStorage.RojoShared.InstanceRefrences)
 local Utility = require(InstanceRefrence.RStorage.Modules.Utility) --General Utility functions, may be of use.
+local RemoteEvent: RemoteEvent = ReplicatedStorage.RojoShared.RemoteEvent
 -- Classes --
 local classVehicle = require(script.Vehicles.BaseVehicle)
 local classClient = require(script.Client)
@@ -41,4 +42,14 @@ Players.PlayerRemoving:Connect(function(player, reason)
 	local client = Clients[player.UserId] --For eaiser syntax
 
 	Clients[player.UserId] = nil --Delete the client
+end)
+-- RemoteEvent Handeling --
+type Packet = {
+	Group: string,
+	Message: any,
+}
+RemoteEvent.OnServerEvent:Connect(function(player, packet: Packet)
+	if packet.Group == "Input" then
+		print(packet.Message)
+	end
 end)
